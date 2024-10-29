@@ -1,0 +1,156 @@
+/* Sección general de la aplicación */
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.pokemon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 20px 0;
+}
+
+/* Estilos de la barra de búsqueda */
+.search-bar {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+
+.search-bar input {
+  padding: 8px;
+  font-size: 16px;
+}
+
+.search-bar button {
+  padding: 8px 16px;
+  font-size: 16px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Estilos para las tarjetas de Pokémon */
+.pokemon-card-container {
+  cursor: pointer; /* Cambia el cursor para indicar que es clickeable */
+  transition: transform 0.2s; /* Animación para el efecto de agrandamiento */
+}
+
+.pokemon-card-container:hover {
+  transform: scale(1.05); /* Agrandar la tarjeta al pasar el cursor */
+}
+
+.pokemon-card {
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  width: 150px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.pokemon-card:hover {
+  transform: scale(1.05); /* Aumenta el tamaño al pasar el cursor */
+}
+
+.pokemon-card img {
+  width: 100px;
+  height: 100px;
+}
+
+/* Estilos para la tarjeta detallada */
+.pokemon-card.detailed {
+  position: fixed; /* Fija la tarjeta en la pantalla */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centra la tarjeta */
+  background-color: white; /* Fondo blanco */
+  padding: 20px; /* Espaciado interno */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para el efecto de elevación */
+  z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
+}
+
+
+.close-button {
+  background-color: #ff4d4d; /* Botón rojo para cerrar */
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.close-button:hover {
+  background-color: #ff1a1a; /* Efecto hover para el botón */
+}
+
+/* Estilos para los botones de tipo */
+.type-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.type-button {
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #f2f2f2;
+  border: none;
+}
+
+.type-button.selected {
+  background-color: #ffcc00;
+  color: white;
+}
+
+/* Estilos para el modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.close-button:hover {
+  background-color: #ff1a1a;
+}
